@@ -1,0 +1,3 @@
+package commons
+
+case object ApartmentSupervisorRegistration
