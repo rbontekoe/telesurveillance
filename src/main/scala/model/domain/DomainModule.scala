@@ -18,6 +18,7 @@ trait SensorRepositoryApi {
   def findRoomNbr(sensorId: Int): Option[Room]
 } // defined api for repository
 
+// Fields
 case class SensorId(value: Int) extends AnyVal
 case class ImageId(value: String) extends AnyVal
 case class RoomId(value: Int) extends AnyVal

@@ -26,7 +26,7 @@ class ObjectRecognitionAdapter extends ObjectRecognitionApi with RestApi {
     analyse(sensorId: SensorId, imageId: ImageId)
 
   def analyse(sensorId: SensorId, imageId: ImageId): List[Person] =
-    //TODO Retrieve image and analyse
+    //TODO Retrieve image and analyse, temporary result:
     List(new Person(new PersonId(210), PersonName("Mrs Neeltje")))
 
   /*

@@ -7,8 +7,8 @@ import model.api.RoomApi
 
 //RoomRepositoryAdapter
 
-trait RoomLookup {
-  def findRoomNbr(sensorId: Int): Option[Room]
+trait RoomLookup extends SensorRepositoryApi {
+//  def findRoomNbr(sensorId: Int): Option[Room]
   def findRoomNumber(sensorId: Int): Option[Room]
 }
 
