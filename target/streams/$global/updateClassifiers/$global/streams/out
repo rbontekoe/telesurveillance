@@ -9999,7 +9999,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.2!scala-compiler.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.14.3!jline.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.14.3!jline.jar(doc)[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 890ms :: artifacts dl 64ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1407ms :: artifacts dl 63ms[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 compile produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 runtime produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 test produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-test.xml[0m
@@ -10013,4 +10013,4 @@
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 docs produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 pom produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 scala-tool produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (890ms resolve - 64ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (1407ms resolve - 63ms download)[0m
