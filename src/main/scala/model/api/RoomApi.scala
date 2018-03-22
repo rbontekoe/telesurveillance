@@ -29,7 +29,7 @@ object RoomApi extends Crud[Room] with RoomApi{
     val selectedRoom = rooms.filter(_.sensorid === sensorId)
     val roomsAction: DBIO[Seq[RoomTableRow]] = selectedRoom.result
     val roomsFuture: Future[Seq[RoomTableRow]] = db.run(roomsAction)
-    val roomsResults = Await.result(roomsFuture, 2.seconds)
+    val roomsResults = Await.result(roomsFuture, 1 seconds)
     
     if (!roomsResults.isEmpty) {
       val res = roomsResults(0)

@@ -15,7 +15,6 @@ object RemoteRoomApi {
 
 class RemoteRoomApi {
 
-  
   def cleanupFolder = {
     println("Cleanup folder")
     val directory = new File(".\\pictures") // Be aware "./pictures" in Linux

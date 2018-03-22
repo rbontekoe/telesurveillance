@@ -74,7 +74,7 @@ case class Apartment(apartmentId: ApartmentId, personId: PersonId, name: Apartme
     val person = Person(PersonId(personId), PersonName(""))
     val res = Option(PersonApi.read(person))
     res match {
-      case Some(p) => p
+      case Some(person) => person
       case None => None
     }
   }

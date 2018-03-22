@@ -4,3 +4,6 @@ run
 compile
 eclipse
 run
+update
+compile
+exit
