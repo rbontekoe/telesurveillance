@@ -38,14 +38,14 @@ object RoomType {
   case object Livingroom extends RoomType
   case object Balcony extends RoomType
   case object Unkown extends RoomType
-  
+
   // values for textToRoomType conversion function
   val bathroom = RoomType.Bathroom.toString()
   val bedroom = RoomType.Bedroom.toString()
   val livingroom = RoomType.Livingroom.toString()
   val kitchen = RoomType.Kitchen.toString()
   val balcony = RoomType.Balcony.toString()
-  
+
   def textToRoomType(r: String): RoomType = r.toLowerCase().capitalize match {
     case `bathroom`   => RoomType.Bathroom
     case `bedroom`    => RoomType.Bedroom
@@ -56,15 +56,13 @@ object RoomType {
   } // defined textToRoomType
 } // defined RoomType 
 
-
-
 case class Room(roomId: RoomId, roomType: RoomType, apartmentId: ApartmentId, sensorId: SensorId) {
   def getApartment(apartmentId: Int): Option[Apartment] = {
     val apartment = Apartment(ApartmentId(apartmentId), PersonId(0), ApartmentName(""))
     val res = Option(ApartmentApi.read(apartment))
     res match {
       case Some(ap) => ap
-      case None => None
+      case None     => None
     }
   }
 }
@@ -75,7 +73,7 @@ case class Apartment(apartmentId: ApartmentId, personId: PersonId, name: Apartme
     val res = Option(PersonApi.read(person))
     res match {
       case Some(person) => person
-      case None => None
+      case None         => None
     }
   }
 }
@@ -86,6 +84,22 @@ object AlarmType {
   case object Warning extends AlarmType
   case object Severe extends AlarmType
   case object Error extends AlarmType
+  case object Unkown extends AlarmType
+
+  // values for textToAlarmType conversion function
+  val info = AlarmType.Info.toString()
+  val warning = AlarmType.Warning.toString()
+  val severe = AlarmType.Severe.toString()
+  val error = AlarmType.Error.toString()
+
+  def textToAlarmType(r: String): AlarmType = r.toLowerCase().capitalize match {
+    case `info`    => AlarmType.Info
+    case `warning` => AlarmType.Warning
+    case `severe`  => AlarmType.Severe
+    case `error`   => AlarmType.Error
+    case _         => AlarmType.Unkown
+  } // defined textToAlarmType
+
 } // defined enumeration AlarmType
 
 trait RoomState

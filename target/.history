@@ -7,3 +7,22 @@ run
 update
 compile
 exit
+run
+compile
+exit
+run
+update
+exit
+clean
+update
+compile
+eclipse
+run
+compile
+ipconfig
+run
+compile
+sbt update
+update
+eclipse
+run

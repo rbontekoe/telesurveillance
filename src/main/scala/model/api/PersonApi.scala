@@ -24,7 +24,7 @@ object PersonApi extends Crud[Person] {
     val selectedPerson = persons.filter(_.personid === person.personId.value)
     val personsAction: DBIO[Seq[PersonTableRow]] = selectedPerson.result
     val personsFuture: Future[Seq[PersonTableRow]] = db.run(personsAction)
-    val personsResult = Await.result(personsFuture, 2.seconds)
+    val personsResult = Await.result(personsFuture, 2 seconds)
     
     if (!personsResult.isEmpty) {
       val res = personsResult(0)

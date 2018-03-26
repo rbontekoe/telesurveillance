@@ -7,7 +7,7 @@ import scala.concurrent.Await
 import scala.concurrent.duration._
 import akka.dispatch.OnSuccess
 
-object RoomApartmentPerson extends App {
+object RoomApartmentPerson2 extends App {
 
   val sensorId = 10100
   val rra = new RoomRepositoryAdapter
@@ -35,5 +35,4 @@ object RoomApartmentPerson extends App {
     case None => println("Nothing")
   }
   
-  Thread.sleep(5000)
 }
