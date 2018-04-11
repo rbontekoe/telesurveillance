@@ -26,18 +26,23 @@ class RemoteRoomApi {
   
   def takePicture = {
     println("Taking picture")
-    // Run Python program on Raspberry Pi in Docker container, uncomment next statement
-    //"python3 takepic.py !" 
+    // Run Python program on Raspberry Pi in Docker container, uncomment next statements
+    //import sys.process._
+    //"python3 camera.py" ! 
+    
     Thread.sleep(3000)
     
   } // defined TakePicture
 
   def compareImages(imageNew: File, imageOld: File): Double = {
+    println("IMAGE NEW: " + imageNew)
+    println("IMAGE OLD: " + imageOld)
     val difference: Double = (new CompareImages).compareImages(imageNew, imageOld)
 
     // Save image local
     val photoNew: BufferedImage = ImageIO.read(imageNew)
-    ImageIO.write(photoNew, "jpg", new File("pictures/photo2.jpg"))
+//    ImageIO.write(photoNew, "jpg", new File("pictures/photo2.jpg"))
+    ImageIO.write(photoNew, "jpg", imageOld)
 
     difference
 

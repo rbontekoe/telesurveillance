@@ -4,7 +4,7 @@
 		module="telesurveillance_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20180326164448"
+		publication="20180411174150"
 	>
 		<description>
 		telesurveillance
@@ -32,19 +32,19 @@
 		<artifact name="telesurveillance_2.12" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
-		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.2" conf="scala-tool->default,optional(default)"/>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.12.2" conf="scala-tool->default,optional(default);compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-actor_2.12" rev="2.5.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-testkit_2.12" rev="2.5.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-persistence_2.12" rev="2.5.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-remote_2.12" rev="2.5.8" conf="compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.4" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.12.4" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-actor_2.12" rev="2.5.11" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-testkit_2.12" rev="2.5.11" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-persistence_2.12" rev="2.5.11" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-remote_2.12" rev="2.5.11" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-http_2.12" rev="10.0.10" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-stream_2.12" rev="2.5.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-cluster_2.12" rev="2.5.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-cluster-tools_2.12" rev="2.5.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-cluster-metrics_2.12" rev="2.5.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-cluster-sharding_2.12" rev="2.5.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.akka" name="akka-contrib_2.12" rev="2.5.8" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-stream_2.12" rev="2.5.11" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-cluster_2.12" rev="2.5.11" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-cluster-tools_2.12" rev="2.5.11" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-cluster-metrics_2.12" rev="2.5.11" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-cluster-sharding_2.12" rev="2.5.11" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-contrib_2.12" rev="2.5.11" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.1" conf="test->default(compile)"/>
 		<dependency org="org.iq80.leveldb" name="leveldb" rev="0.7" conf="compile->default(compile)"/>
 		<dependency org="org.fusesource.leveldbjni" name="leveldbjni-all" rev="1.8" conf="compile->default(compile)"/>

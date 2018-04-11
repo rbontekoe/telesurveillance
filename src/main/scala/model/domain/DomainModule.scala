@@ -1,8 +1,5 @@
 package model.domain
 
-import model.api.ApartmentApi
-import model.api.PersonApi
-
 trait Crud[T] {
   def create(obj: T): Boolean
   def read(obj: T): Option[T]
@@ -56,27 +53,9 @@ object RoomType {
   } // defined textToRoomType
 } // defined RoomType 
 
-case class Room(roomId: RoomId, roomType: RoomType, apartmentId: ApartmentId, sensorId: SensorId) {
-  def getApartment(apartmentId: Int): Option[Apartment] = {
-    val apartment = Apartment(ApartmentId(apartmentId), PersonId(0), ApartmentName(""))
-    val res = Option(ApartmentApi.read(apartment))
-    res match {
-      case Some(ap) => ap
-      case None     => None
-    }
-  }
-}
+case class Room(roomId: RoomId, roomType: RoomType, apartmentId: ApartmentId, sensorId: SensorId) 
 
-case class Apartment(apartmentId: ApartmentId, personId: PersonId, name: ApartmentName) {
-  def getPerson(personId: Int): Option[Person] = {
-    val person = Person(PersonId(personId), PersonName(""))
-    val res = Option(PersonApi.read(person))
-    res match {
-      case Some(person) => person
-      case None         => None
-    }
-  }
-}
+case class Apartment(apartmentId: ApartmentId, personId: PersonId, name: ApartmentName)
 
 trait AlarmType
 object AlarmType {

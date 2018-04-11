@@ -1,6 +1,5 @@
 package actors
 
-import actors.ObjectRecognitionActor.AnalyseSensorImage
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.Props
@@ -12,11 +11,9 @@ import model.domain.Person
 import model.domain.SensorId
 import model.domain.SensorImage
 import model.infrastructure.ObjectRecognitionAdapter
+import commons.AnalyseSensorImage
 
 object ObjectRecognitionActor{
-  case class AnalyseSensorImage(sensorId: SensorId, imageId: ImageId)
-  case class SensorImageAnalysed(persons: List[Person])
-
   val recognizerAdapter = new ObjectRecognitionAdapter 
 }
 
@@ -39,6 +36,6 @@ class ObjectRecognitionActor extends Actor with ActorLogging {
         surveillanceActor ! NonEmptyRoom(SensorImage(sensorId, imageId), AlarmType.Warning, persons)
 
     case x =>
-      log.warning(s"Received unknown message: $x")
+      log.warning("Received unknown message: {}", x)
   }
 }

@@ -6,12 +6,14 @@ import scala.concurrent.duration._
 
 import model.domain.ApartmentId
 import model.domain.Crud
-import model.domain.Room
 import model.domain.RoomId
 import model.domain.RoomType
 import model.domain.SensorId
 import slick.jdbc.PostgresProfile.api._
 import model.domain.Apartment
+import model.domain.PersonId
+import model.domain.ApartmentName
+import model.domain.Room
 
 /*
  * Room repository
@@ -20,7 +22,7 @@ trait RoomApi {
   def findRoom(sensorId: Int): Option[Room]
 }
 
-object RoomApi extends Crud[Room] with RoomApi{
+object RoomApi extends Crud[Room] with RoomApi {
 
   val db = Database.forConfig("chapter01")
   val rooms = TableQuery[RoomTable]
@@ -30,12 +32,12 @@ object RoomApi extends Crud[Room] with RoomApi{
     val roomsAction: DBIO[Seq[RoomTableRow]] = selectedRoom.result
     val roomsFuture: Future[Seq[RoomTableRow]] = db.run(roomsAction)
     val roomsResults = Await.result(roomsFuture, 1 seconds)
-    
+
     if (!roomsResults.isEmpty) {
       val res = roomsResults(0)
       Option(Room(RoomId(res.roomid), RoomType.textToRoomType(res.roomtype), ApartmentId(res.apartmentid), SensorId(sensorId)))
     } else None
-    
+
   } // defined findRoom by sensorId
 
   // TODO
@@ -43,6 +45,15 @@ object RoomApi extends Crud[Room] with RoomApi{
   def read(room: Room): Option[Room] = { ??? }
   def update(room: Room): Boolean = { ??? }
   def delete(room: Room): Boolean = { ??? }
+
+  def getApartment(apartmentId: Int): Option[Apartment] = {
+    val apartment = Apartment(ApartmentId(apartmentId), PersonId(0), ApartmentName(""))
+    val res = Option(ApartmentApi.read(apartment))
+    res match {
+      case Some(ap) => ap
+      case None     => None
+    }
+  }
 } // defined RoomApi functions/methods
 
 final case class RoomTableRow(

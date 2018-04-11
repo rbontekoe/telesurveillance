@@ -2,6 +2,7 @@ package actors
 
 import java.io.File
 import java.nio.file.Paths
+import java.util.Date
 
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
@@ -14,8 +15,9 @@ import akka.actor.ActorNotFound
 import akka.actor.ActorSelection
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.FileIO
-import akka.stream.scaladsl.Sink
+import akka.stream.scaladsl.StreamRefs
 import akka.util.Timeout
+import commons.StorePicture
 import model.api.RemoteRoomApi
 import model.domain.ImageId
 import model.domain.SensorId
@@ -35,22 +37,20 @@ object PictureManager {
   //TODO implement ApartmentSupervisor actor for life cycle management of PictureManager
   case object Analyse
   case object TakePictureAndCompare
+  case class ImageSaved(sensorId: SensorId, imageId: ImageId)
 
   // Read values from application.conf
   val config = ConfigFactory.load.getConfig("RoomMonitor")
-  val sensorId = config.getInt("sensorId")            // 10100
-  val imageId = config.getString("imageId")           // photo2.jpg
-  val threshold = config.getDouble("threshold")       // 2
-  val _chunkSize = config.getInt("_chunkSize")        // 500000
+  val sensorId = config.getInt("sensorId") // 10101
+  val imageId = config.getString("imageId") // photo2.jpg
+  val threshold = config.getDouble("threshold") // 2
+  val picturePath = config.getString("picturePath") // pictures/
 
-  val fileNew = new File(config.getString("fileNew")) // photo.jpg
-  val fileOld = new File(config.getString("fileOld")) // pictures/photo2.jpg
+  val fileOld = new File(picturePath + sensorId.toString() + imageId)
+  val fileNew = new File(config.getString("fileNew")) // photo.jpg (created by IR camera)
 
   def apply(sensorRepositoryAdapter: ActorSelection, imageProvider: RemoteRoomApi) =
     new PictureManager(sensorRepositoryAdapter, RemoteRoomApi())
-
-  case class ImageSaved(sensorId: SensorId, imageId: ImageId)
-
 }
 
 class PictureManager(roomRepositoryActor: ActorSelection, imageProvider: RemoteRoomApi) extends Actor with ActorLogging {
@@ -72,33 +72,33 @@ class PictureManager(roomRepositoryActor: ActorSelection, imageProvider: RemoteR
       // Take picture
       imageProvider.takePicture
       val result = imageProvider.compareImages(fileNew, fileOld)
-      println("Difference: " + result)
-      if (result > threshold) sendImage
+      log.info("Difference: {}", result)
 
+      // Send image to targetActor
+      if (result > threshold) {
+        implicit val materializer = ActorMaterializer()
+        implicit val ec = context.dispatcher
+        implicit val resolveTimeout = Timeout(5 seconds)
+
+        try {
+          // obtain the picture
+          val source = FileIO.fromPath(Paths.get(picturePath + sensorId + imageId))
+
+          // materialize the SourceRef
+          val sourceRef = source.runWith(StreamRefs.sourceRef())
+
+          // send sourceRef to target actor (RoomRepostitoryActor)
+          val actorRef = Await.result(roomRepositoryActor.resolveOne(), resolveTimeout.duration)
+          val time = new Date().getTime
+          actorRef ! StorePicture(sourceRef, sensorId, time)
+
+        } catch { 
+          case ActorNotFound(_) => log.info("\nActor not found, remote system maybe down")
+          case e: Exception => log.info("\nError: {}", e.getMessage)
+        }
+      }
     }
     case x =>
-      log.warning(s"Received unknown message: $x")
-  }
-
-  // Send image to SensorRepository as ByteString
-  private def sendImage: Unit = {
-
-    implicit val materializer = ActorMaterializer()
-    implicit val ec = context.dispatcher
-    implicit val resolveTimeout = Timeout(5 seconds)
-
-    try {
-      val actorRef = Await.result(roomRepositoryActor.resolveOne(), resolveTimeout.duration)
-
-      val source = FileIO.fromPath(Paths.get("photo.jpg"), chunkSize = _chunkSize)
-
-      log.info("\nStreaming image to SensorRepositoryAdapter (on laptop)")
-
-      val last = source.runWith(Sink.actorRef(actorRef, onCompleteMessage = ImageSaved(SensorId(sensorId), ImageId(imageId))))
-
-    } catch {
-      case ActorNotFound(_) => log.info("\nActor not found, remote system maybe down")
-      case e: Exception     => log.info(s"\nError: ${e.getMessage}")
-    }
+      log.warning("Received unknown message: {}", x)
   }
 }

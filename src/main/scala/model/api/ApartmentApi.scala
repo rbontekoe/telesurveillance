@@ -10,6 +10,8 @@ import slick.jdbc.PostgresProfile.api._
 import model.domain.Apartment
 import model.domain.ApartmentName
 import model.domain.PersonId
+import model.domain.Person
+import model.domain.PersonName
 
 /*
  * Apartment repository
@@ -26,16 +28,25 @@ object ApartmentApi extends Crud[Apartment] {
     val apartmentsAction: DBIO[Seq[ApartmentTableRow]] = selectedApartment.result
     val apartmentsFuture: Future[Seq[ApartmentTableRow]] = db.run(apartmentsAction)
     val apartmentsResult = Await.result(apartmentsFuture, 2.seconds)
-    
+
     if (!apartmentsResult.isEmpty) {
       val res = apartmentsResult(0)
       Option(Apartment(ApartmentId(res.apartmentid), PersonId(res.personid), ApartmentName(res.name)))
     } else None
-    
+
   } // define read
-  
+
   def update(apartment: Apartment): Boolean = { ??? }
   def delete(apartment: Apartment): Boolean = { ??? }
+
+  def getPerson(personId: Int): Option[Person] = {
+    val person = Person(PersonId(personId), PersonName(""))
+    val res = Option(PersonApi.read(person))
+    res match {
+      case Some(person) => person
+      case None         => None
+    }
+  }
 }
 
 final case class ApartmentTableRow(

@@ -13,7 +13,6 @@ class ApartmentSupervisor extends Actor {
   import ApartmentSupervisor._
 
   val pictureManager = context.actorOf(Props[PictureManager], "pictureManager")
-  println(pictureManager)
 
   //  context.system.scheduler.schedule(2 seconds, 1 seconds, roomStatusProvider, Analyse)
 
