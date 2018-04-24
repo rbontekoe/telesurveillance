@@ -4,7 +4,7 @@
 		module="telesurveillance$sources_javadoc_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20180330084140"
+		publication="20180413165044"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

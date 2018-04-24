@@ -4,7 +4,7 @@
 		module="telesurveillance_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20180411174150"
+		publication="20180413175225"
 	>
 		<description>
 		telesurveillance
@@ -46,8 +46,6 @@
 		<dependency org="com.typesafe.akka" name="akka-cluster-sharding_2.12" rev="2.5.11" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-contrib_2.12" rev="2.5.11" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.1" conf="test->default(compile)"/>
-		<dependency org="org.iq80.leveldb" name="leveldb" rev="0.7" conf="compile->default(compile)"/>
-		<dependency org="org.fusesource.leveldbjni" name="leveldbjni-all" rev="1.8" conf="compile->default(compile)"/>
 		<dependency org="org.postgresql" name="postgresql" rev="9.3-1100-jdbc41" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.slick" name="slick_2.12" rev="3.2.1" conf="compile->default(compile)"/>
 		<dependency org="ch.qos.logback" name="logback-classic" rev="1.2.3" conf="compile->default(compile)"/>

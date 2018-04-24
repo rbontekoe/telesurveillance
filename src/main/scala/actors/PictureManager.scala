@@ -4,7 +4,6 @@ import java.io.File
 import java.nio.file.Paths
 import java.util.Date
 
-import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
 
 import com.typesafe.config.ConfigFactory
@@ -35,11 +34,14 @@ object PictureManager {
    */
 
   //TODO implement ApartmentSupervisor actor for life cycle management of PictureManager
-  case object Analyse
-  case object TakePictureAndCompare
-  case class ImageSaved(sensorId: SensorId, imageId: ImageId)
+  
+  sealed trait PictureManagerMsg
+  // PictureManager Messages
+  case object TakePictureAndCompare extends PictureManagerMsg
+  case object Analyse extends PictureManagerMsg // For future use
 
-  // Read values from application.conf
+
+  // Application values
   val config = ConfigFactory.load.getConfig("RoomMonitor")
   val sensorId = config.getInt("sensorId") // 10101
   val imageId = config.getString("imageId") // photo2.jpg
@@ -49,6 +51,7 @@ object PictureManager {
   val fileOld = new File(picturePath + sensorId.toString() + imageId)
   val fileNew = new File(config.getString("fileNew")) // photo.jpg (created by IR camera)
 
+  // Constructor
   def apply(sensorRepositoryAdapter: ActorSelection, imageProvider: RemoteRoomApi) =
     new PictureManager(sensorRepositoryAdapter, RemoteRoomApi())
 }
@@ -58,6 +61,7 @@ class PictureManager(roomRepositoryActor: ActorSelection, imageProvider: RemoteR
   import PictureManager._
 
   var state = "Init"
+  var time: Long = new Date().getTime
 
   def receive = {
     case TakePictureAndCompare => {
@@ -71,11 +75,15 @@ class PictureManager(roomRepositoryActor: ActorSelection, imageProvider: RemoteR
 
       // Take picture
       imageProvider.takePicture
-      val result = imageProvider.compareImages(fileNew, fileOld)
-      log.info("Difference: {}", result)
+      val difference = imageProvider.compareImages(fileNew, fileOld)
+      log.info("Difference: {}", difference)
+
+      // time lapse during last time picture was sent
+      val timeNew = new Date().getTime
+      val timeLapse = timeNew - time
 
       // Send image to targetActor
-      if (result > threshold) {
+      if (difference > threshold || timeLapse > 1000 * 60 * 10) {
         implicit val materializer = ActorMaterializer()
         implicit val ec = context.dispatcher
         implicit val resolveTimeout = Timeout(5 seconds)
@@ -88,13 +96,13 @@ class PictureManager(roomRepositoryActor: ActorSelection, imageProvider: RemoteR
           val sourceRef = source.runWith(StreamRefs.sourceRef())
 
           // send sourceRef to target actor (RoomRepostitoryActor)
-          val actorRef = Await.result(roomRepositoryActor.resolveOne(), resolveTimeout.duration)
-          val time = new Date().getTime
-          actorRef ! StorePicture(sourceRef, sensorId, time)
 
-        } catch { 
+          time = timeNew
+          roomRepositoryActor ! StorePicture(sourceRef, sensorId, time, difference.toLong, timeLapse)
+
+        } catch {
           case ActorNotFound(_) => log.info("\nActor not found, remote system maybe down")
-          case e: Exception => log.info("\nError: {}", e.getMessage)
+          case e: Exception     => log.info("\nError: {}", e.getMessage)
         }
       }
     }

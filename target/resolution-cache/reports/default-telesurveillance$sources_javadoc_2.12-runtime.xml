@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20180330084140"/>
+		date="20180413165045"/>
 	<dependencies>
 		<module organisation="com.typesafe.akka" name="akka-cluster-metrics_2.12">
 			<revision name="2.5.11" status="release" pubdate="20180228133957" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" extra-info.apiURL="http://doc.akka.io/api/akka/2.5.11" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="31">

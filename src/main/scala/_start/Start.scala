@@ -23,13 +23,10 @@ object CentralSystem extends App {
 
   // Create supervisor
   val apartmentManager = system.actorOf(Props[ApartmentManager], "manager")
-  
-  // Create actors for CentralSystem
+
+  // Create actor receiving the remote SourceRef
   val roomRepositoryActor = system.actorOf(Props[RoomRepositoryActor], "repository")
   
-  val surveillant = system.actorOf(Props[SurveillanceActor], "surveillant")
-  
-  val recognizer = system.actorOf(Props[ObjectRecognitionActor], "recognizer")
 }
 
 object RoomMonitor extends App {
@@ -41,8 +38,6 @@ object RoomMonitor extends App {
 
   // CentralSystem actor (RoomRepositoryActor) who will receive the image file
   val targetActor = system.actorSelection(config.getString("centralSystemActor"))
-
-  //TODO ApartmentSupervisor managing the lifecycle of PictureManager actors
 
   // Local service
   val pictureManager = system.actorOf(Props(PictureManager(targetActor, RemoteRoomApi())), "pictureManager")

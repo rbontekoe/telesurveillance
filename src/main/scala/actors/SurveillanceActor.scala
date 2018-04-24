@@ -16,12 +16,13 @@ class SurveillanceActor extends Actor with ActorLogging {
   
   def receive = {
     case EmptyRoom(sensorImage) => 
-      roomStateApi create(EmptyRoom(sensorImage))  
+      roomStateApi create(EmptyRoom(sensorImage)) 
+      log.info("\nNonEmptyRoom sensorImage: {}", sensorImage)
     case NonEmptyRoom(sensorImage, alarmType, persons) => 
       roomStateApi create(NonEmptyRoom(sensorImage, alarmType, persons))
-      log.info("\nNonEmptyRoom sensorid {}, alarmtype {}, person(s) {}", 
+      log.info("\nNonEmptyRoom sensorImage: {}, alarmType: {}, person(s): {}", 
         sensorImage, alarmType, persons)
-      println(NonEmptyRoom(sensorImage, alarmType, persons))
+//      println(NonEmptyRoom(sensorImage, alarmType, persons))
     case x =>
       log.info("Received unknown message {}", x)
   }

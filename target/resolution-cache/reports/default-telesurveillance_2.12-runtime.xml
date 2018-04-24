@@ -7,10 +7,10 @@
 		revision="1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20180411174150"/>
+		date="20180413175225"/>
 	<dependencies>
 		<module organisation="com.typesafe.slick" name="slick_2.12">
-			<revision name="3.2.1" status="release" pubdate="20170720143859" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://slick.typesafe.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="40">
+			<revision name="3.2.1" status="release" pubdate="20170720143859" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://slick.typesafe.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="36">
 				<license name="Two-clause BSD-style license" url="http://github.com/slick/slick/blob/master/LICENSE.txt"/>
 				<metadata-artifact status="no" details="" size="3166" time="0" location="C:\Users\rbont\.ivy2\cache\com.typesafe.slick\slick_2.12\ivy-3.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/slick/slick_2.12/3.2.1/slick_2.12-3.2.1.pom"/>
 				<caller organisation="default" name="telesurveillance_2.12" conf="compile, runtime" rev="3.2.1" rev-constraint-default="3.2.1" rev-constraint-dynamic="3.2.1" callerrev="1.0"/>
@@ -30,7 +30,7 @@
 				<artifacts>
 				</artifacts>
 			</revision>
-			<revision name="1.7.25" status="release" pubdate="20170316173632" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="43">
+			<revision name="1.7.25" status="release" pubdate="20170316173632" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="39">
 				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
 				<metadata-artifact status="no" details="" size="5250" time="0" location="C:\Users\rbont\.ivy2\cache\org.slf4j\slf4j-api\ivy-1.7.25.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.pom"/>
 				<caller organisation="com.typesafe.slick" name="slick_2.12" conf="default, compile, runtime, master" rev="1.7.18" rev-constraint-default="1.7.18" rev-constraint-dynamic="1.7.18" callerrev="3.2.1"/>
@@ -43,49 +43,13 @@
 			</revision>
 		</module>
 		<module organisation="org.postgresql" name="postgresql">
-			<revision name="9.3-1100-jdbc41" status="release" pubdate="20131101144433" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jdbc.postgresql.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="39">
+			<revision name="9.3-1100-jdbc41" status="release" pubdate="20131101144433" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jdbc.postgresql.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="35">
 				<license name="BSD License" url="http://jdbc.postgresql.org/license.html"/>
 				<metadata-artifact status="no" details="" size="2512" time="0" location="C:\Users\rbont\.ivy2\cache\org.postgresql\postgresql\ivy-9.3-1100-jdbc41.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/postgresql/postgresql/9.3-1100-jdbc41/postgresql-9.3-1100-jdbc41.pom"/>
 				<caller organisation="default" name="telesurveillance_2.12" conf="compile, runtime" rev="9.3-1100-jdbc41" rev-constraint-default="9.3-1100-jdbc41" rev-constraint-dynamic="9.3-1100-jdbc41" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="postgresql" type="jar" ext="jar" status="no" details="" size="587064" time="0" location="C:\Users\rbont\.ivy2\cache\org.postgresql\postgresql\jars\postgresql-9.3-1100-jdbc41.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/postgresql/postgresql/9.3-1100-jdbc41/postgresql-9.3-1100-jdbc41.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.iq80.leveldb" name="leveldb">
-			<revision name="0.7" status="release" pubdate="20140206051603" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="35">
-				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="no" details="" size="4460" time="0" location="C:\Users\rbont\.ivy2\cache\org.iq80.leveldb\leveldb\ivy-0.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/iq80/leveldb/leveldb/0.7/leveldb-0.7.pom"/>
-				<caller organisation="default" name="telesurveillance_2.12" conf="compile, runtime" rev="0.7" rev-constraint-default="0.7" rev-constraint-dynamic="0.7" callerrev="1.0"/>
-				<artifacts>
-					<artifact name="leveldb" type="jar" ext="jar" status="no" details="" size="229619" time="0" location="C:\Users\rbont\.ivy2\cache\org.iq80.leveldb\leveldb\jars\leveldb-0.7.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/iq80/leveldb/leveldb/0.7/leveldb-0.7.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="com.google.guava" name="guava">
-			<revision name="16.0.1" status="release" pubdate="20140203234528" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="37">
-				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="5672" time="0" location="C:\Users\rbont\.ivy2\cache\com.google.guava\guava\ivy-16.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom"/>
-				<caller organisation="org.iq80.leveldb" name="leveldb" conf="default, compile, runtime, master" rev="16.0.1" rev-constraint-default="16.0.1" rev-constraint-dynamic="16.0.1" callerrev="0.7"/>
-				<artifacts>
-					<artifact name="guava" type="bundle" ext="jar" status="no" details="" size="2228009" time="0" location="C:\Users\rbont\.ivy2\cache\com.google.guava\guava\bundles\guava-16.0.1.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.iq80.leveldb" name="leveldb-api">
-			<revision name="0.7" status="release" pubdate="20140206051442" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="36">
-				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="no" details="" size="3265" time="0" location="C:\Users\rbont\.ivy2\cache\org.iq80.leveldb\leveldb-api\ivy-0.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/iq80/leveldb/leveldb-api/0.7/leveldb-api-0.7.pom"/>
-				<caller organisation="org.iq80.leveldb" name="leveldb" conf="default, compile, runtime, master" rev="0.7" rev-constraint-default="0.7" rev-constraint-dynamic="0.7" callerrev="0.7"/>
-				<artifacts>
-					<artifact name="leveldb-api" type="jar" ext="jar" status="no" details="" size="9236" time="0" location="C:\Users\rbont\.ivy2\cache\org.iq80.leveldb\leveldb-api\jars\leveldb-api-0.7.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/iq80/leveldb/leveldb-api/0.7/leveldb-api-0.7.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -266,7 +230,7 @@
 			</revision>
 		</module>
 		<module organisation="ch.qos.logback" name="logback-classic">
-			<revision name="1.2.3" status="release" pubdate="20170331212753" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="41">
+			<revision name="1.2.3" status="release" pubdate="20170331212753" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="37">
 				<license name="Eclipse Public License - v 1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
 				<license name="GNU Lesser General Public License" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"/>
 				<metadata-artifact status="no" details="" size="10512" time="0" location="C:\Users\rbont\.ivy2\cache\ch.qos.logback\logback-classic\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.pom"/>
@@ -279,7 +243,7 @@
 			</revision>
 		</module>
 		<module organisation="ch.qos.logback" name="logback-core">
-			<revision name="1.2.3" status="release" pubdate="20170331212715" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="42">
+			<revision name="1.2.3" status="release" pubdate="20170331212715" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="38">
 				<license name="Eclipse Public License - v 1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
 				<license name="GNU Lesser General Public License" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"/>
 				<metadata-artifact status="no" details="" size="7994" time="0" location="C:\Users\rbont\.ivy2\cache\ch.qos.logback\logback-core\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.pom"/>
@@ -494,18 +458,6 @@
 				<artifacts>
 					<artifact name="akka-persistence_2.12" type="jar" ext="jar" status="no" details="" size="885000" time="0" location="C:\Users\rbont\.ivy2\cache\com.typesafe.akka\akka-persistence_2.12\jars\akka-persistence_2.12-2.5.11.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-persistence_2.12/2.5.11/akka-persistence_2.12-2.5.11.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.fusesource.leveldbjni" name="leveldbjni-all">
-			<revision name="1.8" status="release" pubdate="20131017151826" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="38">
-				<license name="The BSD 3-Clause License" url="http://www.opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="no" details="" size="4687" time="0" location="C:\Users\rbont\.ivy2\cache\org.fusesource.leveldbjni\leveldbjni-all\ivy-1.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.pom"/>
-				<caller organisation="default" name="telesurveillance_2.12" conf="compile, runtime" rev="1.8" rev-constraint-default="1.8" rev-constraint-dynamic="1.8" callerrev="1.0"/>
-				<artifacts>
-					<artifact name="leveldbjni-all" type="bundle" ext="jar" status="no" details="" size="1045744" time="0" location="C:\Users\rbont\.ivy2\cache\org.fusesource.leveldbjni\leveldbjni-all\bundles\leveldbjni-all-1.8.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

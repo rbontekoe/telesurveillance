@@ -10004,7 +10004,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.14.5!jline.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar(src)[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1438ms :: artifacts dl 78ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 963ms :: artifacts dl 61ms[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 compile produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 runtime produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 test produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-test.xml[0m
@@ -10018,4 +10018,4 @@
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 docs produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 pom produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#telesurveillance$sources_javadoc_2.12;1.0 scala-tool produced in D:\workspace\telesurveillance\telesurveillance\target\resolution-cache\reports\default-telesurveillance$sources_javadoc_2.12-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1438ms resolve - 78ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (963ms resolve - 61ms download)[0m
