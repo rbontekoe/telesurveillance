@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 public class CompareImages {
 
 	public double compareImages(File fileNew, File fileOld) {
-		System.out.println(fileNew + " / " + fileOld);
+//		System.out.println(fileNew + " / " + fileOld);
 
 		double result = 0;
 		

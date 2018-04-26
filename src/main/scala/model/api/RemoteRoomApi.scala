@@ -2,10 +2,8 @@ package model.api
 
 import java.awt.image.BufferedImage
 import java.io.File
-
 import javax.imageio.ImageIO
 import model.CompareImages
-import model.domain.RoomType
 
 object RemoteRoomApi {
 
@@ -35,8 +33,8 @@ class RemoteRoomApi {
   } // defined TakePicture
 
   def compareImages(imageNew: File, imageOld: File): Double = {
-    println("IMAGE NEW: " + imageNew)
-    println("IMAGE OLD: " + imageOld)
+//    println("IMAGE NEW: " + imageNew)
+//    println("IMAGE OLD: " + imageOld)
     val difference: Double = (new CompareImages).compareImages(imageNew, imageOld)
 
     // Save image local

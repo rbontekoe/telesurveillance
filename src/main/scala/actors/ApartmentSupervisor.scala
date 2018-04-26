@@ -7,6 +7,8 @@ import akka.actor.Actor
 import akka.actor.Props
 import model.api.RemoteRoomApi
 
+
+
 object ApartmentSupervisor {
   case object Start
   

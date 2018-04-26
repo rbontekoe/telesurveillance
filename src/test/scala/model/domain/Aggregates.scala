@@ -65,30 +65,30 @@ class ApartmentSpec extends FunSuite {
 }
 
 class EmptyRoomSpec extends FunSuite {
-    import Aggregates._
+  import Aggregates._
 
-    test("the sensorId should be 10100") {
-      assert(emptyRoom.sensorImage.sensorId.value == 10100)
-    }
-
+  test("the sensorId should be 10100") {
+    assert(emptyRoom.sensorImage.sensorId.value == 10100)
   }
+
+}
 
 class NonEmptyRoomSpec extends FunSuite {
-    import Aggregates._
-    
-    test("the sensorId should be 10100") {
-      assert(nonEmptyRoom.sensorImage.sensorId.value == 10100)
-    }
-    
-    test("the alarmType should be Info") {
-      assert(nonEmptyRoom.alarmType == AlarmType.Info)
-    }
-    
-    test("the personId should be 1") {
-      assert(nonEmptyRoom.persons(0).personId.value == 1)
-    }
-    
-    test("the personName should be Mrs Neeltje") {
-      assert(nonEmptyRoom.persons(0).name.value == "Mrs Neeltje")
-    }
+  import Aggregates._
+
+  test("the sensorId should be 10100") {
+    assert(nonEmptyRoom.sensorImage.sensorId.value == 10100)
   }
+
+  test("the alarmType should be Info") {
+    assert(nonEmptyRoom.alarmType == AlarmType.Info)
+  }
+
+  test("the personId should be 1") {
+    assert(nonEmptyRoom.persons(0).personId.value == 1)
+  }
+
+  test("the personName should be Mrs Neeltje") {
+    assert(nonEmptyRoom.persons(0).name.value == "Mrs Neeltje")
+  }
+}

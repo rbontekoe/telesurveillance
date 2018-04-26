@@ -17,9 +17,9 @@ import akka.stream.scaladsl.FileIO
 import akka.stream.scaladsl.StreamRefs
 import akka.util.Timeout
 import commons.StorePicture
-import model.api.RemoteRoomApi
 import model.domain.ImageId
 import model.domain.SensorId
+import model.api.RemoteRoomApi
 
 /*
  * Run on Raspberry Pi in Docker container with Scala and Python

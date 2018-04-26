@@ -46,11 +46,16 @@ class RoomStateApi extends Crud[RoomState] {
       val insertAction = DBIO.seq(roomStates += rowValues)
       val insertFuture = db.run(insertAction)
       val insertResult = Await.result(insertFuture, 2 seconds)
+      true
     } catch {
-      case e: Exception => println(e)
-    }
-    // finally db.close
-    true
+      case e: Exception =>
+        println(e)
+        false
+    } 
+//    finally {
+//      db.close
+//    }
+
   }
 
   def read(roomState: RoomState): Option[RoomState] = { ??? }
