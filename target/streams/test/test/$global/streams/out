@@ -1,0 +1,36 @@
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.domain.TextToAlarmTypeSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.api.PersonApiSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.domain.NonEmptyRoomSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.domain.RoomTypeSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.api.RoomStateApiSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.domain.TextToRoomTypeSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.domain.ApartmentSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.api.RoomApiSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.domain.PersonSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(actors.PictureManagerActorTest, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.domain.AlarmTypeSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.domain.EmptyRoomSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.api.ApartmentApiSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.domain.RoomSpec, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(model.infrastructure.RoomApartmentPersonRead, org.scalatest.tools.Framework$$anon$1@62722fe5, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 5 seconds, 62 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 46[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 15, aborted 0[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 46, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[32mAll tests passed.[0m[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	model.api.PersonApiSpec[0m
+[0m[[0mdebug[0m] [0m	model.api.RoomStateApiSpec[0m
+[0m[[0mdebug[0m] [0m	actors.PictureManagerActorTest[0m
+[0m[[0mdebug[0m] [0m	model.domain.TextToAlarmTypeSpec[0m
+[0m[[0mdebug[0m] [0m	model.domain.TextToRoomTypeSpec[0m
+[0m[[0mdebug[0m] [0m	model.domain.PersonSpec[0m
+[0m[[0mdebug[0m] [0m	model.api.ApartmentApiSpec[0m
+[0m[[0mdebug[0m] [0m	model.domain.ApartmentSpec[0m
+[0m[[0mdebug[0m] [0m	model.domain.AlarmTypeSpec[0m
+[0m[[0mdebug[0m] [0m	model.domain.RoomSpec[0m
+[0m[[0mdebug[0m] [0m	model.infrastructure.RoomApartmentPersonRead[0m
+[0m[[0mdebug[0m] [0m	model.domain.EmptyRoomSpec[0m
+[0m[[0mdebug[0m] [0m	model.domain.NonEmptyRoomSpec[0m
+[0m[[0mdebug[0m] [0m	model.api.RoomApiSpec[0m
+[0m[[0mdebug[0m] [0m	model.domain.RoomTypeSpec[0m

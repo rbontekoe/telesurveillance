@@ -6,9 +6,9 @@ import model.domain.PersonId
 import model.domain.ImageId
 import model.domain.PersonName
 import model.domain.NonEmptyRoom
-import model.domain.SensorImage
 import model.domain.Person
 import model.domain.SensorId
+import model.domain.SensorImage
 
 object Insert extends App {
   val roomStateApi = new RoomStateApi()
