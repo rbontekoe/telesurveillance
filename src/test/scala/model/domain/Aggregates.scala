@@ -3,6 +3,8 @@ package model.domain
 import org.scalatest.FunSuite
 
 object Aggregates {
+  
+  // stored values
   val room = Room(RoomId(101), RoomType.Livingroom, ApartmentId(101), SensorId(10100))
 
   val person = Person(PersonId(1), PersonName("Mrs Neeltje"))

@@ -20,6 +20,9 @@ import commons.StorePicture
 import model.domain.ImageId
 import model.domain.SensorId
 import model.api.RemoteRoomApi
+import scala.util.Success
+import scala.util.Failure
+import scala.util.Try
 
 /*
  * Run on Raspberry Pi in Docker container with Scala and Python
@@ -34,12 +37,11 @@ object PictureManager {
    */
 
   //TODO implement ApartmentSupervisor actor for life cycle management of PictureManager
-  
+
   sealed trait PictureManagerMsg
   // PictureManager Messages
   case object TakePictureAndCompare extends PictureManagerMsg
   case object Analyse extends PictureManagerMsg // For future use
-
 
   // Application values
   val config = ConfigFactory.load.getConfig("RoomMonitor")
@@ -104,6 +106,24 @@ class PictureManager(roomRepositoryActor: ActorSelection, imageProvider: RemoteR
           case ActorNotFound(_) => log.info("\nActor not found, remote system maybe down")
           case e: Exception     => log.info("\nError: {}", e.getMessage)
         }
+
+        //        val result = Try {
+        //          // obtain the picture
+        //          val source = FileIO.fromPath(Paths.get(picturePath + sensorId + imageId))
+        //
+        //          // materialize the SourceRef
+        //          val sourceRef = source.runWith(StreamRefs.sourceRef())
+        //
+        //          // send sourceRef to target actor (RoomRepostitoryActor)
+        //
+        //          time = timeNew
+        //          roomRepositoryActor ! StorePicture(sourceRef, sensorId, time, difference.toLong, timeLapse)
+        //        }
+        //
+        //        result match {
+        //          case Failure(f)     => println("Message wasn't send")
+        //        }
+
       }
     }
     case x =>

@@ -1,0 +1,43 @@
+Start Eclipse
+Open telesurveillance project
+Open folder src -> main -> scala -> _start
+Select Start.scala
+Right mouse button click
+Select Run as -> Scala Application
+Select CentralSystem$ - _start
+
+Start Putty
+Type raspi2
+Login
+Run docker start d6abe9869be6
+Run docker exec -ti d6abe9869be6 /bin/bash
+Type cd telesurveillance
+Type sbt
+Type run
+
+raspi2 - output
+===============
+TEST
+Taking picture
+[INFO] [07/31/2018 07:30:47.551] [RoomMonitor-akka.actor.default-dispatcher-2] [akka.tcp://RoomMonitor@127.0.0.1:2554/user/supervisor/pictureManager]
+State: Running
+photo.jpg / pictures/10103photo2.jpg
+[INFO] [07/31/2018 07:30:54.179] [RoomMonitor-akka.actor.default-dispatcher-2] [akka.tcp://RoomMonitor@127.0.0.1:2554/user/supervisor/pictureManager] Difference: 673.1261979166667
+
+
+Laptop (pictures are in the folder roomstate) - output
+================
+RECEIVED
+========
+Id: 10103
+Time: Tue Jul 31 09:30:34 CEST 2018
+TimeLapse: 0
+Difference: 10000
+[INFO] [07/31/2018 09:30:35.883] [CentralSystem-akka.actor.default-dispatcher-3] [akka.tcp://CentralSystem@192.168.2.11:2552/user/repository/recognizer] 
+Start analysing image
+[INFO] [07/31/2018 09:30:35.884] [CentralSystem-akka.actor.default-dispatcher-3] [akka.tcp://CentralSystem@192.168.2.11:2552/user/repository/recognizer] 
+Inform surveillant about room status
+Alarmtype: Warning
+ 
+[INFO] [07/31/2018 09:30:36.528] [CentralSystem-akka.actor.default-dispatcher-2] [akka.tcp://CentralSystem@192.168.2.11:2552/user/repository/recognizer/surveillant] 
+NonEmptyRoom sensorImage: SensorImage(SensorId(10103),ImageId(photo4.jpg)), alarmType: Warning, person(s): List(Person(PersonId(210),PersonName(Mrs Neeltje)))

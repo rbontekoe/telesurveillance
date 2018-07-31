@@ -7,3 +7,5 @@ update
 compile
 eclipse
 run
+help
+version

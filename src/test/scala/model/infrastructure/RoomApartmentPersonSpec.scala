@@ -19,10 +19,12 @@ object RoomApartmentPerson {
 
   val sensorId = 10100
 
+  // Result values
   val room = Room(RoomId(15), RoomType.Livingroom, ApartmentId(101), SensorId(sensorId))
   val apartment = Apartment(ApartmentId(101), PersonId(1), ApartmentName("Vesuvius"))
   val person = Person(PersonId(1), PersonName("Mrs Neeltje"))
 
+  // Adapter to retrieve result values
   val rra = new RoomRepositoryAdapter
 
   val result = for {
@@ -36,14 +38,14 @@ class RoomApartmentPersonRead extends FunSuite {
   import RoomApartmentPerson._
 
   test("Room retrieved should be " + room) {
-    assert(!result.filter(p => p._1 == room).isEmpty)
+    assert(result.filter(p => p._1 == room).nonEmpty)
   }
 
   test("Apartment retrieved should be " + apartment) {
-    assert(!result.filter(p => p._2 == apartment).isEmpty)
+    assert(result.filter(p => p._2 == apartment).nonEmpty)
   }
 
   test("Person retrieved should be " + person) {
-    assert(!result.filter(p => p._3 == person).isEmpty)
+    assert(result.filter(p => p._3 == person).nonEmpty)
   }
 }

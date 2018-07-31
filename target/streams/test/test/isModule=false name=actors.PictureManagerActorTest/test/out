@@ -1,4 +1,0 @@
-[0m[[0minfo[0m] [0m[32mPictureManagerActorTest:[0m[0m
-[0m[[0minfo[0m] [0m[32mPictureManager actor[0m[0m
-[0m[[0minfo[0m] [0m[32m- should handle the command TakePictureAndCompare[0m[0m
-[0m[[0minfo[0m] [0m[32m- should ignore any other messages[0m[0m

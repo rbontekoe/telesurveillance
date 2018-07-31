@@ -1,3 +1,0 @@
-[0m[[0minfo[0m] [0m[32mRoomStateApiSpec:[0m[0m
-[0m[[0minfo[0m] [0m[32m- A NonEmptyRoom should be created in roomstate table[0m[0m
-[0m[[0minfo[0m] [0m[32m- An EmptyRoom should be created in roomstate table[0m[0m
